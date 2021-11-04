@@ -1,5 +1,5 @@
 from PIL import Image, ImageFont, ImageDraw, ImageSequence
-from rgbmatrix import graphics
+from RGBMatrixEmulator import graphics
 from utils import center_text
 from calendar import month_abbr
 from renderer.screen_config import screenConfig
@@ -112,8 +112,8 @@ class MainRenderer:
             if gamedatetime.day == time.day:
                 date_text = 'TODAY'
             else:
-                date_text = gamedatetime.strftime('%A %-d %b').upper()
-            gametime = gamedatetime.strftime("%-I:%M %p")
+                date_text = gamedatetime.strftime('%a, %b %d').upper()
+            gametime = gamedatetime.strftime("%I:%M %p")
             # Center the game time on screen.                
             date_pos = center_text(self.font_mini.getsize(date_text)[0], 32)
             gametime_pos = center_text(self.font_mini.getsize(gametime)[0], 32)
